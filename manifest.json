@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Hide Promoted Jobs",
+    "version": "1.0",
+    "description": "Hides promoted job postings on LinkedIn's job search pages.",
+    "homepage_url": "https://github.com/winterhazel/hide-promoted-jobs",
+    "icons": {
+        "48": "icons/icon-48.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.linkedin.com/jobs/search/*"
+            ],
+            "js": [
+                "hide.js"
+            ]
+        }
+    ]
+}
