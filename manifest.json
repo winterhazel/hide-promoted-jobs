@@ -10,7 +10,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.linkedin.com/jobs/search/*"
+                "*://*.linkedin.com/*"
             ],
             "js": [
                 "hide.js"
