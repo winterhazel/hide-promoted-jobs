@@ -1,5 +1,10 @@
+const JOBS_PATH = '/jobs/search/';
+
 setInterval(() => {
-     document.querySelectorAll("li").forEach(function (e) {
-          e.id && e.innerHTML.match(/Promoted/) && e.remove()
-     });
+  if (window.location.pathname.startsWith(JOBS_PATH)) {
+    const elements = document.querySelectorAll('.t-12.t-normal.t-black--light.job-card-container__footer-item');
+    elements.forEach((element) => {
+      element.parentElement.closest('div > ul > li').remove();
+    });
+  }
 }, 300);
