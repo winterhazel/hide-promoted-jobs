@@ -7,6 +7,18 @@
     "icons": {
         "48": "icons/icon-48.png"
     },
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": {
+            "48": "icons/icon-48.png"
+        },
+        "default_title": "Toggle Extension"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
     "content_scripts": [
         {
             "matches": [
@@ -16,5 +28,8 @@
                 "hide.js"
             ]
         }
+    ],
+    "permissions": [
+        "storage"
     ]
 }
