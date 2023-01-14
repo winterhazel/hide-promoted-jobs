@@ -1,3 +1,6 @@
+const BADGE_TEXT = {true: 'ON', false: 'OFF'};
+const BADGE_COLOR = {true: 'green', false: 'red'};
+
 browser.storage.local.get().then((options) => {
   // Initialize default storage values
   if (!options) {
@@ -18,8 +21,6 @@ function toggle(options) {
 }
 
 function updateBadgeText(enabled) {
-  const badgeText = enabled ? 'ON' : 'OFF';
-  const badgeColor = enabled ? 'green' : 'red';
-  browser.browserAction.setBadgeText({text: badgeText});
-  browser.browserAction.setBadgeBackgroundColor({color: badgeColor});
+  browser.browserAction.setBadgeText({text: BADGE_TEXT[enabled]});
+  browser.browserAction.setBadgeBackgroundColor({color: BADGE_COLOR[enabled]});
 }
