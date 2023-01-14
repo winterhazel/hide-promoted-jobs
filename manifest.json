@@ -24,7 +24,7 @@
     },
     "background": {
         "scripts": [
-            "background.js"
+            "js/background.js"
         ]
     },
     "content_scripts": [
@@ -33,7 +33,7 @@
                 "*://*.linkedin.com/*"
             ],
             "js": [
-                "hide.js"
+                "js/hide.js"
             ]
         }
     ],
