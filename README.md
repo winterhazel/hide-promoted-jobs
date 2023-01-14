@@ -19,6 +19,14 @@ _(temporary)_
 
 ### Chrome
 
+1. Clone the chrome branch
+  ```sh
+   git clone -b chrome https://github.com/winterhazel/hide-promoted-jobs.git
+   ```
+2. Enable Developer Mode
+3. Click the Load unpacked button
+4. Select the extension's directory
+
 ## Usage
 
 You can click on the extension to toggle it off/on. When enabled, the extension will automatically hide promoted job postings. 
