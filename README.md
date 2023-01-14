@@ -2,6 +2,10 @@
 
 Automatically hides promoted job postings on LinkedIn's job search pages.
 
+<div align="center">
+  <img src=".github/images/before.png" alt="Before" width="49%"> <img src=".github/images/after.png" alt="After" width="49%">
+</div>
+
 ## Installation
 
 _(temporary)_
