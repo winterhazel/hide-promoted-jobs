@@ -35,6 +35,10 @@ _(temporary)_
 
 You can click on the extension to toggle it off/on. When enabled, the extension will automatically hide promoted job postings. 
 
+<div align="center">
+  <img src=".github/images/usage.gif" alt="Usage">
+</div>
+
 ## License
 
 This software is distributed under the MIT License in the hope that it will be useful, but WITHOUT ANY WARRANTY. See `LICENSE` for more information.
