@@ -1,8 +1,7 @@
 const JOBS_PATH = '/jobs/search/';
-let interval; let enabled;
 
-browser.storage.onChanged.addListener(initialize);
-initialize();
+let interval;
+let enabled;
 
 function initialize() {
   if (interval) {
@@ -28,3 +27,6 @@ function run(options) {
     });
   }, 300);
 }
+
+browser.storage.onChanged.addListener(initialize);
+initialize();
