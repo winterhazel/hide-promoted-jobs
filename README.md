@@ -8,20 +8,13 @@ Automatically hides promoted job postings on LinkedIn's job search pages.
 
 ## Installation
 
-_(temporary)_
-
 ### Firefox
 
-1. Clone this repository
-  ```sh
-   git clone https://github.com/winterhazel/hide-promoted-jobs.git
-   ```
-2. Open the `about:debugging` page
-3. Click the This Firefox option
-4. Click the Load Temporary Add-on button
-5. Select any file in the extension's directory
+[![](.github/images/firefox-marketplace.png)](https://addons.mozilla.org/en-US/firefox/addon/hide-promoted-jobs/)
 
 ### Chrome
+
+_(temporary)_
 
 1. Clone the chrome branch
   ```sh
