@@ -27,9 +27,10 @@ _(temporary)_
   ```sh
    git clone -b chrome https://github.com/winterhazel/hide-promoted-jobs.git
    ```
-2. Enable Developer Mode
-3. Click the Load unpacked button
-4. Select the extension's directory
+2. Open the `chrome://extensions` page
+3. Enable Developer Mode
+4. Click the Load unpacked button
+5. Select the extension's directory
 
 ## Usage
 
