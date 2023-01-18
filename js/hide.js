@@ -35,12 +35,12 @@ function connectJobListObserver() {
 }
 
 function initialize() {
-  browser.storage.local.get().then((options) => {
+  chrome.storage.local.get().then((options) => {
     enabled = options.enabled;
     connectPathObserver();
     connectJobListObserver();
   });
 }
 
-browser.storage.onChanged.addListener(initialize);
+chrome.storage.onChanged.addListener(initialize);
 initialize();

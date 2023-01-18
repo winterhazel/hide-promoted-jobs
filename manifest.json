@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Hide Promoted Jobs",
     "version": "1.2",
     "description": "Hides promoted job postings on LinkedIn's job search pages.",
@@ -11,7 +11,7 @@
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
     },
-    "browser_action": {
+    "action": {
         "browser_style": true,
         "default_icon": {
             "16": "icons/icon16.png",
@@ -23,9 +23,7 @@
         "default_title": "Toggle Extension"
     },
     "background": {
-        "scripts": [
-            "js/background.js"
-        ]
+        "service_worker": "js/background.js"
     },
     "content_scripts": [
         {
