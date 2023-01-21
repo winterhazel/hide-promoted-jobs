@@ -8,22 +8,13 @@ Automatically hides promoted job postings on LinkedIn's job search pages.
 
 ## Installation
 
+### Chrome
+
+[![](.github/images/chrome-web-store.png)](https://chrome.google.com/webstore/detail/hide-promoted-jobs/bmilkimafelnhekidknkamkhkbeciijg/)
+
 ### Firefox
 
 [![](.github/images/firefox-marketplace.png)](https://addons.mozilla.org/en-US/firefox/addon/hide-promoted-jobs/)
-
-### Chrome
-
-_(temporary)_
-
-1. Clone the chrome branch
-  ```sh
-   git clone -b chrome https://github.com/winterhazel/hide-promoted-jobs.git
-   ```
-2. Open the `chrome://extensions` page
-3. Enable Developer Mode
-4. Click the Load unpacked button
-5. Select the extension's directory
 
 ## Usage
 
