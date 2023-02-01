@@ -18,7 +18,7 @@ Automatically hides promoted job postings on LinkedIn's job search pages.
 
 ## Usage
 
-You can click on the extension to toggle it off/on. When enabled, the extension will automatically hide promoted job postings. 
+You can click on the extension to toggle it off/on. When enabled, the extension will automatically hide promoted job postings.
 
 <div align="center">
   <img src=".github/images/usage.gif" alt="Usage">

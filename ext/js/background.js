@@ -1,8 +1,8 @@
-const BADGE_TEXT = {true: 'ON', false: 'OFF'};
-const BADGE_COLOR = {true: 'green', false: 'red'};
+const BADGE_TEXT = { true: 'ON', false: 'OFF' };
+const BADGE_COLOR = { true: 'green', false: 'red' };
 
 function initialize() {
-  chrome.storage.local.get('enabled', function(options) {
+  chrome.storage.local.get('enabled', (options) => {
     if (typeof options.enabled === 'undefined') {
       options = {
         enabled: true,
@@ -21,8 +21,10 @@ function toggle(options) {
 }
 
 function updateBadgeText(enabled) {
-  chrome.action.setBadgeText({text: BADGE_TEXT[enabled]});
-  chrome.action.setBadgeBackgroundColor({color: BADGE_COLOR[enabled]});
+  chrome.action.setBadgeText({ text: BADGE_TEXT[enabled] });
+  chrome.action.setBadgeBackgroundColor({
+    color: BADGE_COLOR[enabled],
+  });
 }
 
 chrome.tabs.onCreated.addListener(initialize);
