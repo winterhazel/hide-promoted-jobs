@@ -4,6 +4,7 @@ const JOB_LIST_OBSERVER = new MutationObserver((mutations) => run());
 
 let enabled;
 let oldPath;
+let tags;
 
 function checkPathChanges() {
   if (oldPath !== window.location.pathname) {
@@ -14,9 +15,12 @@ function checkPathChanges() {
 
 function run() {
   const display = enabled ? 'none' : 'initial';
-  const elements = document.querySelectorAll('.t-12.t-normal.t-black--light.job-card-container__footer-item');
-  elements.forEach((element) => {
-    element.parentElement.closest('div > ul > li').style.display = display;
+  const li_elements = document.querySelectorAll('li');
+  li_elements.forEach((li) => {
+    const innerText = li.innerText.trim().toLowerCase();
+    if (tags.indexOf(innerText) !== -1) {
+      li.parentElement.closest('ul > li').style.display = display;
+    }
   });
 }
 
@@ -28,8 +32,8 @@ function connectPathObserver() {
 function connectJobListObserver() {
   JOB_LIST_OBSERVER.disconnect();
   if (window.location.pathname.startsWith(JOBS_PATH)) {
-    const JOB_LIST = document.querySelector('ul.scaffold-layout__list-container');
-    if (JOB_LIST) {
+    const JOB_LIST = document.querySelector('.jobs-search-results-list');
+    if (JOB_LIST && tags) {
       JOB_LIST_OBSERVER.observe(JOB_LIST, {childList: true, subtree: true});
       run();
     } else {
@@ -39,6 +43,13 @@ function connectJobListObserver() {
 }
 
 function initialize() {
+  if (!tags) {
+    let lang_url = browser.runtime.getURL('lang.json');
+    fetch(lang_url).then((response) => response.json()).then((json) => {
+      tags = Object.values(json).flat().map(tag => tag.toLowerCase());
+    });
+  }
+
   browser.storage.local.get().then((options) => {
     enabled = options.enabled;
     connectPathObserver();

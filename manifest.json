@@ -39,5 +39,8 @@
     ],
     "permissions": [
         "storage"
+    ],
+    "web_accessible_resources": [
+        "lang.json"
     ]
 }
