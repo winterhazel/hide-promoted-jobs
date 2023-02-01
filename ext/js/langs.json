@@ -5,10 +5,7 @@
   "de": "Anzeige",
   "en": "Promoted",
   "es": "Promocionado",
-  "fr": [
-    "Promu(e)",
-    "Sponsorisé"
-  ],
+  "fr": ["Promu(e)", "Sponsorisé"],
   "hi": "प्रमोट किया गया",
   "in": "Dipromosikan",
   "it": "Promosso",
@@ -23,18 +20,8 @@
   "ru": "Продвигается",
   "sv": "Marknadsfört",
   "th": "โปรโมทแล้ว",
-  "tl": [
-    "Nai-promote",
-    "Na-promote"
-  ],
-  "tr": [
-    "Öne çıkarılan içerik",
-    "Tanıtılan"
-  ],
+  "tl": ["Nai-promote", "Na-promote"],
+  "tr": ["Öne çıkarılan içerik", "Tanıtılan"],
   "uk": "Просувається",
-  "zh": [
-    "广告",
-    "推广",
-    "已宣傳"
-  ]
+  "zh": ["广告", "推广", "已宣傳"]
 }

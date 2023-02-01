@@ -1,0 +1,30 @@
+{
+  "name": "hide-promoted-jobs",
+  "version": "1.3",
+  "description": "Hides promoted job postings on LinkedIn's job search pages.",
+  "main": "index.js",
+  "scripts": {
+    "build": "web-ext build -s ext",
+    "format": "prettier --write .",
+    "lint": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winterhazel/hide-promoted-jobs.git"
+  },
+  "author": "Fabricio Duarte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winterhazel/hide-promoted-jobs/issues"
+  },
+  "homepage": "https://github.com/winterhazel/hide-promoted-jobs#readme",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.3",
+    "web-ext": "^7.5.0"
+  }
+}
