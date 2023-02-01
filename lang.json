@@ -1,7 +1,40 @@
 {
+  "ar": "الترويج",
+  "cs": "Propagováno",
+  "da": "Promoveret",
+  "de": "Anzeige",
+  "en": "Promoted",
+  "es": "Promocionado",
   "fr": [
     "Promu(e)",
     "Sponsorisé"
   ],
-  "pt": "Promovida"
+  "hi": "प्रमोट किया गया",
+  "in": "Dipromosikan",
+  "it": "Promosso",
+  "ja": "プロモーション",
+  "ko": "프로모션",
+  "ms": "Dipromosikan",
+  "nl": "Gepromoot",
+  "no": "Promotert",
+  "pl": "Promowana oferta pracy",
+  "pt": "Promovida",
+  "ro": "Promovat",
+  "ru": "Продвигается",
+  "sv": "Marknadsfört",
+  "th": "โปรโมทแล้ว",
+  "tl": [
+    "Nai-promote",
+    "Na-promote"
+  ],
+  "tr": [
+    "Öne çıkarılan içerik",
+    "Tanıtılan"
+  ],
+  "uk": "Просувається",
+  "zh": [
+    "广告",
+    "推广",
+    "已宣傳"
+  ]
 }
