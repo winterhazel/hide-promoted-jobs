@@ -29,8 +29,12 @@ function connectJobListObserver() {
   JOB_LIST_OBSERVER.disconnect();
   if (window.location.pathname.startsWith(JOBS_PATH)) {
     const JOB_LIST = document.querySelector('ul.scaffold-layout__list-container');
-    JOB_LIST_OBSERVER.observe(JOB_LIST, {childList: true, subtree: true});
-    run();
+    if (JOB_LIST) {
+      JOB_LIST_OBSERVER.observe(JOB_LIST, {childList: true, subtree: true});
+      run();
+    } else {
+      setTimeout(connectJobListObserver, 300);
+    }
   }
 }
 
