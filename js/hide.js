@@ -18,8 +18,13 @@ function run() {
   const li_elements = document.querySelectorAll('li');
   li_elements.forEach((li) => {
     const innerText = li.innerText.trim().toLowerCase();
-    if (tags.indexOf(innerText) !== -1) {
-      li.parentElement.closest('ul > li').style.display = display;
+    if (tags.indexOf(innerText) === -1) {
+      return;
+    }
+
+    const job_item = li.parentElement.closest('ul > li');
+    if (job_item) {
+      job_item.style.display = display;
     }
   });
 }
@@ -44,9 +49,10 @@ function connectJobListObserver() {
 
 function initialize() {
   if (!tags) {
-    let lang_url = browser.runtime.getURL('lang.json');
-    fetch(lang_url).then((response) => response.json()).then((json) => {
-      tags = Object.values(json).flat().map(tag => tag.toLowerCase());
+    let lang_file = browser.runtime.getURL('lang.json');
+    fetch(lang_file).then((response) => response.json()).then((json) => {
+      tags = [json[document.documentElement.lang]].flat().map(tag => tag.toLowerCase());
+      console.log(tags);
     });
   }
 
