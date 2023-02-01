@@ -32,5 +32,10 @@
     }
   ],
   "permissions": ["storage"],
-  "web_accessible_resources": ["js/langs.json"]
+  "web_accessible_resources": [
+    {
+      "resources": ["js/langs.json"],
+      "matches": ["*://*.linkedin.com/*"]
+    }
+  ]
 }
