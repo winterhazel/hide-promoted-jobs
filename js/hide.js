@@ -49,7 +49,7 @@ function connectJobListObserver() {
 
 function initialize() {
   if (!tags) {
-    let lang_file = browser.runtime.getURL('lang.json');
+    let lang_file = browser.runtime.getURL('js/langs.json');
     fetch(lang_file).then((response) => response.json()).then((json) => {
       tags = [json[document.documentElement.lang]].flat().map(tag => tag.toLowerCase());
       console.log(tags);

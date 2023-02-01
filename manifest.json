@@ -41,6 +41,6 @@
         "storage"
     ],
     "web_accessible_resources": [
-        "lang.json"
+        "js/langs.json"
     ]
 }
