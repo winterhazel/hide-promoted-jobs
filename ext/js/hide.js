@@ -37,7 +37,7 @@ function connectPathObserver() {
 function connectJobListObserver() {
   JOB_LIST_OBSERVER.disconnect();
   if (window.location.pathname.startsWith(JOBS_PATH)) {
-    const JOB_LIST = document.querySelector('.jobs-search-results-list');
+    const JOB_LIST = document.querySelector('.scaffold-layout__list');
     if (JOB_LIST && tags) {
       JOB_LIST_OBSERVER.observe(JOB_LIST, { childList: true, subtree: true });
       run();
