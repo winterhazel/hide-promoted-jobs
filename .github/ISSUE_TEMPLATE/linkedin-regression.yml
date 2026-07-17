@@ -1,0 +1,90 @@
+name: LinkedIn Jobs regression
+description: Report a promoted card that remains visible or an organic card that is hidden.
+title: '[LinkedIn regression]: '
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping maintain the extension. Do not include account data,
+        full tracking URLs, screenshots with personal details, or unsanitized
+        LinkedIn HTML.
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension version
+      placeholder: 1.6.0
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Google Chrome
+        - Brave
+        - Firefox (unverified)
+        - Other Chromium browser
+    validations:
+      required: true
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser version
+      placeholder: 149.0.0.0
+    validations:
+      required: true
+  - type: input
+    id: linkedin-language
+    attributes:
+      label: LinkedIn language
+      placeholder: English
+    validations:
+      required: true
+  - type: dropdown
+    id: page-context
+    attributes:
+      label: Page context
+      options:
+        - Direct Jobs search
+        - Jobs home
+        - Jobs collection
+        - Client navigation from another LinkedIn page
+        - Individual job detail
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: behavior
+    attributes:
+      label: Observed behavior
+      options:
+        - A promoted job card remains visible
+        - An organic job card is hidden
+        - Toggle or restoration is incorrect
+        - Extension fails to load or reports an error
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Sanitized reproduction steps
+      description: Describe navigation, filters, and toggle state without including job or account details.
+    validations:
+      required: true
+  - type: textarea
+    id: console
+    attributes:
+      label: Extension console errors
+      description: Paste only errors that reference the extension or its scripts. Remove personal data and tracking values.
+      render: shell
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed account data, job details, tracking URLs, and unsanitized LinkedIn HTML.
+          required: true
+        - label: I reloaded the extension and reproduced the issue with the badge set to ON.
+          required: true

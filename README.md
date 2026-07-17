@@ -16,6 +16,9 @@ Automatically hides promoted job postings on LinkedIn's job search pages.
 
 [![](.github/images/firefox-marketplace.png)](https://addons.mozilla.org/en-US/firefox/addon/hide-promoted-jobs/)
 
+The `1.6.0` source update is verified in Chrome and Brave. Firefox support for
+this update has not been verified.
+
 ## Usage
 
 You can click on the extension to toggle it off/on. When enabled, the extension will automatically hide promoted job postings.
@@ -23,6 +26,17 @@ You can click on the extension to toggle it off/on. When enabled, the extension 
 <div align="center">
   <img src=".github/images/usage.gif" alt="Usage">
 </div>
+
+## Development
+
+```bash
+npm ci
+npm run check
+npm run release
+```
+
+See [`docs/maintenance.md`](docs/maintenance.md) for the sanitized fixture,
+regression, browser-verification, release, and rollback workflow.
 
 ## License
 

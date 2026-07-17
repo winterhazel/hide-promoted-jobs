@@ -1,0 +1,62 @@
+[
+  {
+    "id": "jobs-home-promoted",
+    "file": "jobs-home-promoted.html",
+    "view": "jobs-home",
+    "documentPath": "/jobs/",
+    "layout": "sdui",
+    "promoted": true,
+    "frame": false,
+    "sanitized": true
+  },
+  {
+    "id": "jobs-home-organic",
+    "file": "jobs-home-organic.html",
+    "view": "jobs-home",
+    "documentPath": "/jobs/",
+    "layout": "sdui",
+    "promoted": false,
+    "frame": false,
+    "sanitized": true
+  },
+  {
+    "id": "classic-search-promoted",
+    "file": "classic-search-promoted.html",
+    "view": "search",
+    "documentPath": "/jobs/search/",
+    "layout": "classic",
+    "promoted": true,
+    "frame": false,
+    "sanitized": true
+  },
+  {
+    "id": "classic-search-organic",
+    "file": "classic-search-organic.html",
+    "view": "search",
+    "documentPath": "/jobs/search/",
+    "layout": "classic",
+    "promoted": false,
+    "frame": false,
+    "sanitized": true
+  },
+  {
+    "id": "preload-search-promoted",
+    "file": "preload-search-promoted.html",
+    "view": "search-preload-frame",
+    "documentPath": "/preload/",
+    "layout": "classic",
+    "promoted": true,
+    "frame": true,
+    "sanitized": true
+  },
+  {
+    "id": "top-applicant-organic",
+    "file": "top-applicant-organic.html",
+    "view": "top-applicant-collection",
+    "documentPath": "/jobs/collections/top-applicant/",
+    "layout": "classic",
+    "promoted": false,
+    "frame": false,
+    "sanitized": true
+  }
+]

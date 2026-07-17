@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Hide Promoted Jobs",
-  "version": "1.5",
+  "version": "1.6.0",
   "description": "Hides promoted job postings on LinkedIn's job search pages.",
   "homepage_url": "https://github.com/winterhazel/hide-promoted-jobs",
   "icons": {
@@ -11,8 +11,7 @@
     "64": "icons/icon64.png",
     "128": "icons/icon128.png"
   },
-  "browser_action": {
-    "browser_style": true,
+  "action": {
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
@@ -23,14 +22,20 @@
     "default_title": "Toggle Extension"
   },
   "background": {
-    "scripts": ["js/background.js"]
+    "service_worker": "js/background.js"
   },
   "content_scripts": [
     {
       "matches": ["*://*.linkedin.com/*"],
-      "js": ["js/hide.js"]
+      "js": ["js/detection.js", "js/hide.js"],
+      "all_frames": true
     }
   ],
   "permissions": ["storage"],
-  "web_accessible_resources": ["js/langs.json"]
+  "web_accessible_resources": [
+    {
+      "resources": ["js/langs.json"],
+      "matches": ["*://*.linkedin.com/*"]
+    }
+  ]
 }
