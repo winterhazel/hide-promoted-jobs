@@ -5,24 +5,8 @@
   const CLASSIC_FOOTER_SELECTOR = 'li.job-card-container__footer-item';
   const MAX_SDUI_OWNER_DEPTH = 2;
 
-  function normalizeText(value) {
-    return String(value == null ? '' : value)
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toLowerCase();
-  }
-
-  function isSet(value) {
-    return Object.prototype.toString.call(value) === '[object Set]';
-  }
-
-  function normalizeLabels(labels) {
-    if (!Array.isArray(labels) && !isSet(labels)) {
-      return new Set();
-    }
-
-    return new Set(Array.from(labels, normalizeText).filter(Boolean));
-  }
+  const common = globalScope.HidePromotedJobsCommon;
+  const { normalizeText } = common;
 
   function isElement(node) {
     return Boolean(node && node.nodeType === 1);
@@ -185,10 +169,9 @@
   }
 
   function findPromotedCards(root, labels) {
-    const normalizedLabels = normalizeLabels(labels);
-
     if (
-      normalizedLabels.size === 0 ||
+      !labels ||
+      labels.size === 0 ||
       !root ||
       typeof root.querySelectorAll !== 'function'
     ) {
@@ -197,8 +180,8 @@
 
     return Array.from(
       new Set([
-        ...findClassicCards(root, normalizedLabels),
-        ...findSduiCards(root, normalizedLabels),
+        ...findClassicCards(root, labels),
+        ...findSduiCards(root, labels),
       ])
     );
   }

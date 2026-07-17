@@ -18,6 +18,7 @@ const expectedFiles = [
   'icons/icon48.png',
   'icons/icon64.png',
   'js/background.js',
+  'js/common.js',
   'js/detection.js',
   'js/hide.js',
   'js/langs.json',
