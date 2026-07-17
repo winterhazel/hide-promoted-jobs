@@ -4,6 +4,7 @@ const path = require('node:path');
 const test = require('node:test');
 const { parseHTML } = require('linkedom');
 
+const common = require('../ext/js/common');
 const detection = require('../ext/js/detection');
 
 const fixturesDirectory = path.join(__dirname, 'fixtures', 'linkedin');
@@ -35,7 +36,10 @@ test('classifies every sanitized LinkedIn fixture without fixture metadata', () 
     const expectedCard = document.querySelector('[data-fixture-card="job"]');
     removeFixtureMetadata(document);
 
-    const cards = detection.findPromotedCards(document, ['Promoted']);
+    const cards = detection.findPromotedCards(
+      document,
+      common.normalizeLabels(['Promoted'])
+    );
     assert.equal(cards.length, entry.promoted ? 1 : 0, entry.id);
     if (entry.promoted) {
       assert.equal(cards[0], expectedCard, entry.id);
@@ -73,7 +77,10 @@ test('normalizes exact labels but rejects substring and aggregate matches', () =
     </ul>
   `);
 
-  const cards = detection.findPromotedCards(document, ['promoted']);
+  const cards = detection.findPromotedCards(
+    document,
+    common.normalizeLabels(['promoted'])
+  );
   assert.deepEqual(
     cards.map((card) => card.getAttribute('data-occludable-job-id')),
     ['1']
@@ -97,7 +104,10 @@ test('classic detection fails open when required card evidence is missing', () =
     </ul>
   `);
 
-  assert.deepEqual(detection.findPromotedCards(document, ['Promoted']), []);
+  assert.deepEqual(
+    detection.findPromotedCards(document, common.normalizeLabels(['Promoted'])),
+    []
+  );
 });
 
 test('SDUI detection requires an actual query parameter and unambiguous structure', () => {
@@ -125,7 +135,10 @@ test('SDUI detection requires an actual query parameter and unambiguous structur
     </section>
   `);
 
-  const cards = detection.findPromotedCards(document, ['Promocionado']);
+  const cards = detection.findPromotedCards(
+    document,
+    common.normalizeLabels(['Promocionado'])
+  );
   assert.deepEqual(
     cards.map((card) => card.id),
     ['valid-localized-control']
@@ -149,7 +162,10 @@ test('SDUI ownership never expands into a surrounding section', () => {
     </section>
   `);
 
-  assert.deepEqual(detection.findPromotedCards(document, ['Promoted']), []);
+  assert.deepEqual(
+    detection.findPromotedCards(document, common.normalizeLabels(['Promoted'])),
+    []
+  );
 });
 
 test('SDUI detection resolves a card from its changed action control', () => {
@@ -161,7 +177,10 @@ test('SDUI detection resolves a card from its changed action control', () => {
   const actionControl = expectedCard.querySelector('button[aria-label]');
   removeFixtureMetadata(document);
 
-  const cards = detection.findPromotedCards(actionControl, ['Promoted']);
+  const cards = detection.findPromotedCards(
+    actionControl,
+    common.normalizeLabels(['Promoted'])
+  );
   assert.deepEqual(cards, [expectedCard]);
 });
 
@@ -176,9 +195,15 @@ test('affected-subtree scans reconsider a card after marker hydration', () => {
   `);
   const marker = document.querySelector('#marker');
 
-  assert.deepEqual(detection.findPromotedCards(marker, ['Promoted']), []);
+  assert.deepEqual(
+    detection.findPromotedCards(marker, common.normalizeLabels(['Promoted'])),
+    []
+  );
   marker.textContent = 'Promoted';
-  const cards = detection.findPromotedCards(marker, ['Promoted']);
+  const cards = detection.findPromotedCards(
+    marker,
+    common.normalizeLabels(['Promoted'])
+  );
   assert.equal(cards.length, 1);
   assert.equal(cards[0].getAttribute('data-occludable-job-id'), '1');
 });

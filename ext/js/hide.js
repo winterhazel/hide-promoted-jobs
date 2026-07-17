@@ -124,7 +124,7 @@ function scanRoots(roots) {
     return;
   }
 
-  if (!enabled || !labels || labels.length === 0 || !detection) {
+  if (!enabled || !labels || labels.size === 0 || !detection) {
     return;
   }
 
@@ -237,11 +237,13 @@ function loadLabels() {
       const locale = (document.documentElement.lang || 'en')
         .toLowerCase()
         .split('-')[0];
-      labels = [json[locale] || []].flat();
+      const raw = [json[locale] || []].flat();
+      const common = globalThis.HidePromotedJobsCommon;
+      labels = common ? common.normalizeLabels(raw) : new Set();
       applyCurrentState();
     })
     .catch(() => {
-      labels = [];
+      labels = new Set();
     });
 }
 

@@ -4,6 +4,8 @@ const path = require('node:path');
 const test = require('node:test');
 const vm = require('node:vm');
 
+const commonApi = require('../ext/js/common');
+
 const contentSource = fs.readFileSync(
   path.join(__dirname, '..', 'ext', 'js', 'hide.js'),
   'utf8'
@@ -143,6 +145,9 @@ async function runContent({
       };
     },
     HidePromotedJobsDetection: { findPromotedCards },
+    HidePromotedJobsCommon: {
+      normalizeLabels: commonApi.normalizeLabels,
+    },
     MutationObserver: CapturingMutationObserver,
     window,
   };
