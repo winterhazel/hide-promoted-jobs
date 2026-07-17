@@ -15,9 +15,6 @@ function getDetectionApi() {
 
 function setEnabled(nextEnabled) {
   enabled = nextEnabled;
-  document.documentElement.dataset.hidePromotedJobs = enabled
-    ? 'enabled'
-    : 'disabled';
 }
 
 function isSupportedDocument() {
